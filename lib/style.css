@@ -1,0 +1,25 @@
+:root {
+  background: #0f0;
+}
+
+:root.is-transparent {
+  background: transparent;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#scene {
+  background: #000;
+  color: white;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  contain: strict;
+}
+
+:root.is-transparent #scene {
+  background: transparent;
+}
