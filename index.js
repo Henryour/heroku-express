@@ -15,7 +15,10 @@ function createRendererFactory(
   return function createRenderer({ name = 'Worker' } = {}) {
     const promise = (async () => {
       const browser = await puppeteer.launch({
-        args: launchArgs,
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+        ],
       })
       const page = await browser.newPage()
       page.on('console', (msg) => console.log('PAGE LOG:', msg.text()))
